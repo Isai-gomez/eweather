@@ -1,4 +1,13 @@
 import React from "react";
+import Location from "./Location";
+import WeatherData from "./WeatherData";
 
-const WeartherLocation = () => <div>WeartherLocation</div>;
+const WeartherLocation = () => {
+  return (
+    <div>
+      <Location />
+      <WeatherData />
+    </div>
+  );
+};
 export default WeartherLocation;
