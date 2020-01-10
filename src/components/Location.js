@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 
-const Location = () => {
-  return (
-    <div>
-      <h1>Comalcalco Tabasco</h1>
-    </div>
-  );
-};
+const Location = ({ city }) => (
+	<div>
+		<h1>
+            {city}
+        </h1>
+	</div>
+)
 
-export default Location;
+export default Location
