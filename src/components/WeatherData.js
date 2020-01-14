@@ -15,7 +15,7 @@ const WeatherData = () => {
     temperature= { 20 } 
     weatherState= { RAIN }
     />
-    <WeatherExtraInfo />
+    <WeatherExtraInfo humidity={80} wind={"10 m/s"}/>
   </div>)
 };
 export default WeatherData;
