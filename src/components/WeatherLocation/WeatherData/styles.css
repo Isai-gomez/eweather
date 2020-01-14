@@ -10,7 +10,17 @@
     display: inline-block;
 }
 .weatherTemperatureCont{
-    background-color: grey;
+    background-color: rgb(218, 163, 12);
     width:60%;
     display: inline-block;
+}
+.temperature{
+    font-size: 30px;
+    font-weight: 60%;
+    padding-left: 20px;
+    color:#333;
+}
+.temperatureType{
+    font-weight: bold;
+    color:#333;
 }
