@@ -4,16 +4,16 @@ import WeatherTemperature from "./WeatherTemperature";
 import {
   CLOUD,
   CLOUDY,
-  SUM,
+  SUN,
   RAIN,
   SNOW,
   WINDY,
-} from '../constants/weathers'
+} from '../constants/weathers';
 const WeatherData = () => { 
     return (<div>
     <WeatherTemperature 
     temperature= { 20 } 
-    weatherState={ CLOUD }
+    weatherState= { RAIN }
     />
     <WeatherExtraInfo />
   </div>)
