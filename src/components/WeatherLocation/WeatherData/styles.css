@@ -4,6 +4,11 @@
     height: 100px;
     line-height: 100px;
     border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
    
 }
 .weatherExtraInfoCont{    
@@ -15,7 +20,9 @@
 }
 .weatherTemperatureCont{
     width:60%;
-    display: inline-block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .temperature{
     font-size: 30px;

@@ -5,7 +5,9 @@ import './styles.css';
 import {
   SUN,
 } from './../../constants/weathers';
-
+/*Objeto con los datos de la temperatura que se
+  envian al componente WeatherData.
+*/ 
 const data = {
   temperature: 9,
   weatherState: SUN,
