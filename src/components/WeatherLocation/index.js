@@ -38,7 +38,14 @@ class WeatherLocation extends Component {
     }
   }
   handlerUpdateClick = () => {
-    fetch(api_weather);
+    fetch(api_weather)
+    .then(resolve =>{
+      return(resolve.json())
+      })
+    .then(data =>{
+        console.log(data);
+        });
+
     this.setState({
       city:"Comalcalco",
       data:data2,
