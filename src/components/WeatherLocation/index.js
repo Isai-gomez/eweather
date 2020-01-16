@@ -15,13 +15,6 @@ import {
   const urlBaseWeather = "http://api.openweathermap.org/data/2.5/weather";
 
   const api_weather = `${urlBaseWeather}?q=${location}&appid=${apiKey}`;
-
-const data2 = {
-  temperature: 34,
-  weatherState: WINDY,
-  humidity: 30,
-  wind: '15 m/s',
-}
 const data = {
   temperature: 3,
   weatherState: SUN,
@@ -37,19 +30,38 @@ class WeatherLocation extends Component {
       data:data
     }
   }
+  getWeatherState = weatherData => {
+    return SUN
+  }
+  getData = weather_data => {
+    const { humidity, temp } = weather_data.main;
+    const { speed } = weather_data.wind;
+    const weatherState = this.getWeatherState(weather_data); 
+    const data = {
+      humidity,
+      temperature: temp,
+      weatherState,
+      wind:`${speed} m/s`
+    }
+    return data
+  }
   handlerUpdateClick = () => {
     fetch(api_weather)
     .then(resolve =>{
       return(resolve.json())
       })
     .then(data =>{
-        console.log(data);
-        });
+      const newWeather = this.getData(data);
+      console.log(data);
+      debugger;
+      this.setState({
+        city:"Comalcalco",
+        data:newWeather,
+      })
+      console.log(data);
+      });
 
-    this.setState({
-      city:"Comalcalco",
-      data:data2,
-    })
+    
   }
   render(){
     const { city, data } = this.state;
