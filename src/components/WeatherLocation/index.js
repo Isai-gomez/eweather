@@ -2,19 +2,14 @@ import React, { Component} from "react";
 import Location from "./Location";
 import WeatherData from "./WeatherData/";
 import './styles.css';
+import getData from '../../services/transforWeather';
 import {
   SUN,
-  WINDY,
 } from './../../constants/weathers';
+import { api_weather } from './../../constants/api_url';//constande de la api
 /*Objeto con los datos de la temperatura que se
   envian al componente WeatherData.
 */ 
-
-  const location = "Comalcalco,MX";
-  const apiKey = "4a3b955b30e14049a845fc8846fa2ff0";
-  const urlBaseWeather = "http://api.openweathermap.org/data/2.5/weather";
-
-  const api_weather = `${urlBaseWeather}?q=${location}&appid=${apiKey}`;
 const data = {
   temperature: 3,
   weatherState: SUN,
@@ -30,32 +25,17 @@ class WeatherLocation extends Component {
       data:data
     }
   }
-  getWeatherState = weatherData => {
-    return SUN
-  }
-  getData = weather_data => {
-    const { humidity, temp } = weather_data.main;
-    const { speed } = weather_data.wind;
-    const weatherState = this.getWeatherState(weather_data); 
-    const data = {
-      humidity,
-      temperature: temp,
-      weatherState,
-      wind:`${speed} m/s`
-    }
-    return data
-  }
-  handlerUpdateClick = () => {
+  
+  handleUpdateClick = () => {
     fetch(api_weather)
     .then(resolve =>{
       return(resolve.json())
       })
     .then(data =>{
-      const newWeather = this.getData(data);
+      const newWeather = getData(data);
       console.log(data);
-      debugger;
-      this.setState({
-        city:"Comalcalco",
+            this.setState({
+        city:data.name,
         data:newWeather,
       })
       console.log(data);
@@ -69,7 +49,7 @@ class WeatherLocation extends Component {
     <div className="weatherLocationCont">
       <Location city={city} />
       <WeatherData data={data}/>
-      <button onClick={this.handlerUpdateClick}>Update</button>
+      <button onClick={this.handleUpdateClick}>Update</button>
     </div>
   );
   }
