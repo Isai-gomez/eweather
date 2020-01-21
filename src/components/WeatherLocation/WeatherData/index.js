@@ -6,7 +6,8 @@ import './styles.css';
 /*Se reciben los datos enviados desde WeatherLoctio
   se destructura al recibir en WeatherData.
 */
-const WeatherData = ({ data:{temperature,weatherState,humidity,wind }}) => { 
+
+const WeatherData = ({ data:{ temperature, weatherState, humidity, wind }}) => { 
     return (
     <div className="weatherDataCont">
     <WeatherTemperature 
