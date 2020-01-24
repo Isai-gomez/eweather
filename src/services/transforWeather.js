@@ -9,23 +9,23 @@ import {
   
 const getWeatherState = weather => {
   const { id } = weather; 
-    if (id < 300){
+    if(id < 300){
       return THUNDER;
     }
-    else if (id < 400){
+    else if(id < 400){
       return DRIZZLE;
     }
-    else if (id < 600){
+    else if(id < 600){
       return RAIN;
     }
-    else if (id < 700){
-    return SNOW;
+    else if(id < 700){
+      return SNOW;
     }
-    else if (id === 800){
+    else if(id === 800){
       return SUN;
     }
     else{
-    return SUN;
+      return CLOUD;
     }
   }
 const getData = weather_data => {
