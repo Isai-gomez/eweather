@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import LocationList from "./components/LocationList";
+import { Grid, Col, Row } from 'react-flexbox-grid';
 import "./App.css";
 
 const cities = [
@@ -14,16 +15,26 @@ const cities = [
 
 class App extends Component {
   handleSelectionLocation = city => {
-    console.log("handleSelectionLocation");
-    console.log(city)
+    console.log(`handleSelectionLocation ${city}`);
+    
   }
   render(){
   return (
-    <div className="App">
+    <Grid>
+      <Row>
+        Titulo
+      </Row>
+      <Row>
+        <Col xs={12} md={6}>
       <LocationList 
       cities={cities}
       onSelectedLocation={this.handleSelectionLocation}/>
-    </div>
+      </Col>
+      <Col xs={12} md={6}>
+      <div className="details"></div>
+      </Col>
+      </Row>
+    </Grid>
   );
 }
 }
