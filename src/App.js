@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import LocationList from "./components/LocationList";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
+import Paper from '@material-ui/core/Paper'
 import Typography from '@material-ui/core/Typography';
 import { Grid, Col, Row } from 'react-flexbox-grid';
 import "./App.css";
@@ -41,7 +42,9 @@ class App extends Component {
       onSelectedLocation={this.handleSelectionLocation}/>
       </Col>
       <Col xs={12} md={6}>
-      <div className="details"></div>
+        <Paper elevation={4}>
+          <div className="details"></div>
+        </Paper>
       </Col>
       </Row>
     </Grid>

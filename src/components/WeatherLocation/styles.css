@@ -4,18 +4,27 @@
     text-align: left;
     color:#888;
     line-height: 35px;
+    /* overflow: auto; */
+    
 }
 .locationCont h1{
     margin: 0;
+    white-space: hidden;
+   
 }
 .weatherLocationCont{
-    width: 400px;
-    padding: 15px;
+    width:calc(100% - 20px);
+    margin-left: 10px;
+    margin-right: 10px;
+    margin-top: 1.8em;
+    min-width: 350px;
+    box-sizing: border-box;
+    padding: 25px;
     font-family: 'Roboto', sans-serif;
     box-shadow: 10px 10px 40px -12px rgba(0, 0,0, 0.75);
-    display: flex;
+    /* display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
+    flex-direction: column; */
 
 }
