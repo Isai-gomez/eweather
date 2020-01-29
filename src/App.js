@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import ForcastExtend from "./components/ForcastExtend";
 import LocationList from "./components/LocationList";
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -43,7 +44,9 @@ class App extends Component {
       </Col>
       <Col xs={12} md={6}>
         <Paper elevation={4}>
-          <div className="details"></div>
+          <div className="details">
+            <ForcastExtend></ForcastExtend>
+          </div>
         </Paper>
       </Col>
       </Row>
