@@ -24,8 +24,6 @@ WeatherData.propTypes = {
     temperature: PropTypes.number.isRequired,
     weatherState: PropTypes.string.isRequired,
     humidity: PropTypes.number.isRequired,
-    wind:PropTypes.string.isRequired,
-
-  }),
+    wind:PropTypes.string.isRequired,}),
 }
 export default WeatherData;
