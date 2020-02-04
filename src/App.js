@@ -53,9 +53,7 @@ class App extends Component {
         <Paper elevation={4}>
           <div className="details">
             { !city ?
-             <h1>
-                No se seleccionó ninguna ciudad
-             </h1>:
+             null :
             <ForcastExtend city={ city }></ForcastExtend>
             }
             
