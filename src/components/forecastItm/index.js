@@ -1,9 +1,9 @@
 import React from 'react';
 
-const ForecastItem = () => {
+const ForecastItem = ({ weekDay }) => {
     return (
         <div>
-            Desde ForecastItem
+           { weekDay }
         </div>
     );
 };
