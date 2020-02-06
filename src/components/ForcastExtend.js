@@ -17,7 +17,8 @@ import './styles.css';
 //     weatherState:"nomal",
 //     wind:"normal"
 // }
-
+const apiKey = "4a3b955b30e14049a845fc8846fa2ff0";
+const url = "http://api.openweathermap.org/data/2.5/forecast";
 class ForcastExtend extends Component {
     constructor(){
         super();
@@ -25,10 +26,19 @@ class ForcastExtend extends Component {
             forecastData: null,
         }
     }
-    
+    componentDidMount(){
+        const url_forecast = `${url}?q=${this.props.city}&appid=${apiKey}`;
+        fetch(url_forecast).then(
+            data => (data.json())
+        ).then(
+            weather_data =>{
+                console.log(weather_data)
+            }
+        )
+    }
     renderForecastItemDay(){
         return( "Render Item"
-            // days.map(day => <ForecastItem weekDay={day} hour={10} data={data}></ForecastItem>)
+            // days.map(day => <Foṛ̣ecastItem weekDay={day} hour={10} data={data}></ForecastItem>)
         );
     }
 
