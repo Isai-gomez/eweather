@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import ForecastItem from '../components/forecastItm'
+import transformForecast from '../services/transformForecast';
+// import ForecastItem from '../components/forecastItm'
 import './styles.css';
 
 // const days = [
@@ -33,6 +34,8 @@ class ForcastExtend extends Component {
         ).then(
             weather_data =>{
                 console.log(weather_data)
+                const forecastData = transformForecast(weather_data);
+                this.setState({forecastData})
             }
         )
     }
