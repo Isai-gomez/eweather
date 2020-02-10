@@ -1,23 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import transformForecast from '../services/transformForecast';
-// import ForecastItem from '../components/forecastItm'
+import ForecastItem from '../components/forecastItm'
 import './styles.css';
 
-// const days = [
-//     'Lunes',
-//     'Martes',
-//     'Miercoles',
-//     'Jueves',
-//     'Viernes'
-// ];
 
-// const data = {
-//     temperature:10,
-//     humidity:10,
-//     weatherState:"nomal",
-//     wind:"normal"
-// }
 const apiKey = "4a3b955b30e14049a845fc8846fa2ff0";
 const url = "http://api.openweathermap.org/data/2.5/forecast";
 class ForcastExtend extends Component {
@@ -40,10 +27,15 @@ class ForcastExtend extends Component {
             }
         )
     }
-    renderForecastItemDay(){
-        return( "Render Item"
-            // days.map(day => <Foṛ̣ecastItem weekDay={day} hour={10} data={data}></ForecastItem>)
-        );
+    renderForecastItemDay(forecastData){
+        return forecastData.map(forecast => (
+        <ForecastItem
+            key={`${forecast.weekDay}${forecast.hour}`} 
+            weekDay={forecast.weekDay}
+            hour={forecast.hour}
+            data={forecast.data}>
+        </ForecastItem>));
+      
     }
 
     renderProgress = () => {
@@ -63,7 +55,7 @@ class ForcastExtend extends Component {
                 </h2>
                 {
                 forecastData ?
-                this.renderForecastItemDay():
+                this.renderForecastItemDay(forecastData):
                 this.renderProgress()
                 }               
             </div>
