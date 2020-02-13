@@ -41,7 +41,7 @@ class App extends Component {
       onSelectedLocation={this.handleSelectionLocation}/>
       </Col>
       <Col xs={12} md={6}>
-        <Paper elevation={4}>
+        {/* <Paper elevation={4}> */}
           <div className="details">
             { !city ?
              null :
@@ -49,7 +49,7 @@ class App extends Component {
             }
             
           </div>
-        </Paper>
+        {/* </Paper> */}
       </Col>
       </Row>
     </Grid>

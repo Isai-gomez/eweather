@@ -38,8 +38,19 @@
   }
 }
 .details{
-  background-color: rgba(158, 173, 173, 0.75);
-  height: 100vh;
-  width: 100%;
+  background-color: rgba(158, 173, 173, 0.459);
+  height: 100vw;
+  width: 45vw;
   margin-top: 3em;
+  overflow: auto;
+  padding-left: 2em;
+  padding-right: 2em;
+}
+@media(max-width:64em){
+  .details{
+   width: 80vw;
+   max-height: 50vh;
+   overflow: auto;
+    
+  }
 }
