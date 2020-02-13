@@ -15,10 +15,21 @@ class ForcastExtend extends Component {
         }
     }
     componentDidMount(){
+        this.updateCity(this.props.city)
+        
+    }
+    componentWillReceiveProps(nextProps){
+        if(nextProps.city !== this.props.city){
+            this.setState({forecastData: null});
+            this.updateCity(nextProps.city)
+        }
+
+    }
+    updateCity = city =>{
         const url_forecast = `${url}?q=${this.props.city}&appid=${apiKey}&units=metric`;
         fetch(url_forecast).then(
-            data => (data.json())
-        ).then(
+            data => (data.json()))
+            .then(
             weather_data =>{
                 console.log(weather_data)
                 const forecastData = transformForecast(weather_data);
