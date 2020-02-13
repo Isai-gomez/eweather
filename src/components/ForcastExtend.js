@@ -15,7 +15,7 @@ class ForcastExtend extends Component {
         }
     }
     componentDidMount(){
-        const url_forecast = `${url}?q=${this.props.city}&appid=${apiKey}`;
+        const url_forecast = `${url}?q=${this.props.city}&appid=${apiKey}&units=metric`;
         fetch(url_forecast).then(
             data => (data.json())
         ).then(
